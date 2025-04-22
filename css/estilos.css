@@ -225,8 +225,14 @@ main {
 }
 
 #video_tag {
-    width: fit-content;
-    margin: auto;
+    width: 1200px;
+    /* margin: auto; */
+}
+
+#video_tag video{
+    display: flex;
+    width: 100%
+    /* margin: auto; */
 }
 
 section#nosso_canal {
