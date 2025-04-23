@@ -106,7 +106,7 @@ h1 {
     margin: 0;
 }
 
-h2 {
+h2, figcaption {
     font-family: "Hepta Slab", serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -130,7 +130,7 @@ p {
     text-indent: 50px;
   }
 
-#sign {
+#sign, figcaption {
     /* font-family: "Quicksand", sans-serif; */
     /* font-optical-sizing: auto; */
     font-weight: 300;
@@ -225,14 +225,17 @@ main {
 }
 
 #video_tag {
-    width: 1200px;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 5%;
     /* margin: auto; */
 }
 
 #video_tag video{
-    display: flex;
-    width: 100%
-    /* margin: auto; */
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 
 section#nosso_canal {
@@ -240,7 +243,7 @@ section#nosso_canal {
 }
 
 section {
-    padding: 10px 5%;
+    padding: 5% 5%;
     gap: 20px;
 }
 
@@ -297,14 +300,18 @@ article #cursos {
     max-width: 1200px;
     height: fit-content;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     /* align-content: space-evenly; */
     flex-flow: row wrap;
+    gap: 5px 5px;
+
 }
 
 article #cursos img {
-    max-width: 360px;
+    max-width: 350px;
     height: auto;
+    border: 6px solid whitesmoke;
+    /* margin-top: 8px; */
 }
 
 section h2#txt2 {
@@ -327,26 +334,28 @@ section h2#txt2 {
     padding-left: 4%;
 }
 
-figure {
+#texto_filosofia {
     display: flex;
     border: 2px solid rgb(8, 87, 49);
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
     gap: 20px;
     padding: 3%;
     border-radius: 15px 80px 40px;
     margin-bottom: 2rem;
+    flex-wrap: wrap;
 }
 
-figure blockquote p{
+#texto_filosofia blockquote p{
     font-size: 1.5rem;
     text-align: right;
     padding: 1%;
     margin-right: 2%;
 }
 
-figure img#rubens {
-    width: 40%;
-    height: 40%;
+#texto_filosofia figure img#rubens {
+    /* width: 100%;
+    height: auto; */
     filter: grayscale(100%);
     /* border: 2px solid #7f7f7f; */
     border-radius: 15px 80px 40px;
@@ -488,14 +497,14 @@ footer img {
         height: auto;
     }
 
-    figure {
+    #texto_filosofia {
         display: flex;
         flex-direction: column;
         align-items: center;
         gap: 20px;
     }
 
-    figure img#rubens {
+    #texto_filosofia img#rubens {
         margin-top: 5%;
         width: 90%;
         height: 90%;
