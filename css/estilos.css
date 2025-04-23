@@ -42,6 +42,7 @@ header {
     background-position: center;
     background-blend-mode: soft-light;
     height: 600px;
+    object-fit: cover;
 }
 
 #topo {
@@ -311,7 +312,46 @@ article #cursos img {
     max-width: 350px;
     height: auto;
     border: 6px solid whitesmoke;
+    object-fit: cover;
     /* margin-top: 8px; */
+}
+
+section#professor .container_prof {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 2rem;
+    /* justify-items: center;
+    object-fit: contain; */
+}
+
+.prof1, .prof2, .prof3, .prof4 {
+    width: 100%;
+    height: auto;
+    place-self: center;
+}
+
+.prof1 img, .prof2 img, .prof3 img, .prof4 img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 20px;
+}
+
+.prof1 img {
+    border: 10px solid #f6b8a7;
+}
+
+.prof2 img {
+    border: 10px solid #f6e8a7;
+}
+
+.prof3 img {
+    border: 10px solid #a7f6c1;
+}
+
+.prof4 img {
+    border: 10px solid #daa7f6;
 }
 
 section h2#txt2 {
@@ -357,6 +397,7 @@ section h2#txt2 {
     /* width: 100%;
     height: auto; */
     filter: grayscale(100%);
+    object-fit: none;
     /* border: 2px solid #7f7f7f; */
     border-radius: 15px 80px 40px;
 }
@@ -414,7 +455,7 @@ footer p.assinatura {
 }
 
 footer img {
-    width: 100vw;
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -517,5 +558,14 @@ footer img {
         /* justify-content: center; */
         /* padding: 5%; */
         gap: 3rem;
+    }
+
+    section#professor .container_prof {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        gap: 2rem;
+        /* justify-items: center;
+        object-fit: contain; */
     }
 }
