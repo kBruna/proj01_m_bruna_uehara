@@ -8,6 +8,7 @@
         <title>Guará Estúdio</title>
         <link rel="stylesheet" href="./css/estilos.css" />
         <link rel="stylesheet" href="./css/form.css" />
+        <script src="./js/script.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap" rel="stylesheet">
@@ -40,7 +41,7 @@
                             <div id="f_fill">
                                 <p><label for="f_name">Nome:</label>
                                     <input type="text" id="f_name" name="f_name" placeholder="Seu Nome" minlength="3" required>
-                                    <span id="req_nome">*</span>
+                                    <span  id="req_nome">*</span>
                                 </p>
                             </div>
                             <div id="f_fill">
@@ -55,7 +56,7 @@
                                 </p>
                                 <div id="f_field">
                                     <p>
-                                        <input type="checkbox" id="curso_acrilica" name="tipo_curso" value="Acrilica" required>
+                                        <input type="checkbox" id="curso_acrilica" name="tipo_curso" value="Acrilica">
                                         <label for="curso_acrilica">Curso de Acrílica</label>
                                     </p><p>
                                         <input type="checkbox" id="curso_aquarela" name="tipo_curso" value="Aquarela">
@@ -81,7 +82,7 @@
                                 </p>
                                     <div id="f_field">
                                     <p>
-                                        <input type="radio" id="r_insta" name="f_radio" value="instagram">
+                                        <input type="radio" id="r_insta" name="f_radio" value="instagram" required>
                                         <label for="r_insta">Instagram</label>
                                     </p><p>
                                         <input type="radio" id="r_face" name="f_radio" value="facebook">
@@ -95,6 +96,8 @@
                                     </p><p>
                                         <input type="radio" id="r_outros" name="f_radio" value="outros">
                                         <label for="r_outros">Outros</label>
+                                    </p><p id="f_outros">
+                                        <!-- <input type="text" id="input_outros" name="f_radio" placeholder="Outros" minlength="4"> -->
                                     </p>
                                 </div>
                             </div>

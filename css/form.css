@@ -6,11 +6,9 @@ article {
     background-color: rgb(215, 215, 215);
 }
 
-#req_nome, #req_email, #req_check, #req_radio {
-    padding: 0;
-    color: red;
-    font-size: 1rem;
-}
+/* #req_nome, #req_email, #req_check, #req_radio {
+    text-align: right;
+} */
 
 #forms {
     display: flex;
@@ -26,8 +24,9 @@ article {
 }
 
 #forms2 {
-    width: fit-content;
+    min-width: 50%;
     padding-top: 5%;
+    padding-bottom: 5%;
 }
 
 #f_field {
@@ -58,7 +57,7 @@ article {
     padding-right: 15px;
 }
 
-#f_name, #f_email {
+#f_name, #f_email, #input_outros {
     font-family: "Quicksand", sans-serif;
     height: 2.5rem;
     min-width: 60%;
@@ -103,12 +102,25 @@ input[type=submit]:hover {
     border-color: rgb(225, 225, 225);
 }
 
-input:invalid {
-    border: 1px solid red;
-}
+/* input:focus {
+    border: 1px solid black;
+} */
+
+/* input:invalid {
+    border: 1px solid blue;
+} */
 
 input:required:valid {
     border: 1px solid green;
+}
+
+input:required:not(:placeholder-shown):invalid {
+    border: 1px solid red;
+}
+
+span {
+    color: red;
+    font-size: .7em;
 }
 
 @media screen and (max-width: 800px) {
@@ -125,6 +137,6 @@ input:required:valid {
 
     #forms2 {
         align-self: center;
-        margin-bottom: 10%;
+        /* margin-bottom: 10%; */
     }
 }

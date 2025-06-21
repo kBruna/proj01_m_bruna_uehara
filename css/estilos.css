@@ -187,7 +187,7 @@ li a:hover {
 #banner {
     max-width: 1200px;
     margin: auto;
-    padding-top: 15%;
+    padding-top: 25%;
 }
 
 main {
@@ -431,6 +431,10 @@ footer img {
         height: max-content;
         align-items: center;
         position: relative;
+    }
+
+    #banner {
+        padding-top: 40%;
     }
 
     .container {
