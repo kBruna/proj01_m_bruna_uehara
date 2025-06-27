@@ -1,38 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta name="viewport" content="width=device-width, initial=scale=1.0" />
-        <link rel="shortcut icon" href="./img/logo.png" />
-        <title>Guará Estúdio</title>
-        <link rel="stylesheet" href="./css/estilos.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <nav id="topo">
-            <div class="container">
-                <div id="logo">
-                    <img src="./img/logo.png" width="40px" height="40px" title="logo" />
-                    <h1><span id="guara">GUARÁ</span><span id="estudio"> estúdio</span></h1>
-                </div>
-                <div id="menu">
-                    <ul id="menu_itens">
-                        <li><a class="active" href="index.html">Home</a></li>
-                        <li><a href="#">Calendário</a></li>
-                        <li><a href="contato.html">Contato</a></li>
-                        <li><a href="#">Login</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+<?php
+    $page = "index";
+    @include('header.php');
+?>
         <header>
             <div id="banner">
                 <p class="title">Venha fazer uma aula experi&shy;mental!</p>
-                <a class="action" href="#">Entre em Contato ></a>
+                <a class="action" href="contato.php">Entre em Contato ></a>
             </div>
         </header>
         <main>
@@ -122,45 +95,6 @@
             </section>
             <br>
         </main>
-        <footer>
-            <div id="info">
-                <div class="footer_container">
-                    <h2 id="color">
-                        Contato:
-                    </h2><p>
-                        Email: <a href="guara@guaraestudio.com.br">guara@guaraestudio.com.br</a>
-                    </p><p>
-                        Redes Sociais:
-                    </p>
-                    <div id="redes">
-                        <a href="#" target="_blank">
-                            <img src="./img/instagram.png" alt="Instagram">
-                        </a>
-                        <a href="#" target="_blank">
-                            <img src="./img/facebook.png" alt="Facebook">
-                        </a>
-                        <a href="#" target="_blank">
-                            <img src="./img/whatsapp.png" alt="WhatsApp">
-                        </a>
-                    </div>
-                </div>
-                <div class="footer_container">
-                    <h2 id="color">
-                        Horário de atendimento:
-                    </h2><p>
-                        Terça e Quarta 14h - 17h
-                    </p><p>
-                        Sábado 9h - 17h
-                    </p><p>
-                        Domingos e Feriados não abrimos
-                    </p>
-                </div>
-            </div>
-            <iframe id="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d258.8657318582133!2d-46.63817738764878!3d-23.60344005884868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5a36ed440be7%3A0x3e83850f2f5e1e9f!2sCurso%20de%20Aquarela%20e%20Desenho%20-%20Guar%C3%A1%20Est%C3%BAdio!5e0!3m2!1sen!2sbr!4v1745179824103!5m2!1sen!2sbr"style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            <p class="assinatura">
-                &copy;2025 - Guará Estúdio&reg; feito por <i>Bruna Kaori Uehara - RA0020482421024 - Manhã</i>
-            </p>
-            <img src="./img/faixa_colorida.jpg" alt="faixa colorida" />
-        </footer>
-    </body>
-</html>
+<?php
+    @include('footer.php');
+?>

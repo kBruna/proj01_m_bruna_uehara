@@ -12,7 +12,8 @@ let err;
 
 
 //RegEx
-let userRegex = /^([a-zA-Z]{3,})$/;
+let userRegex = /^([a-zA-Z]{2,})(?:\s[a-zA-Z'’-]{2,})?(?:\s[a-zA-Z'’-]{2,})?$/;
+
 let emailRegex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 
@@ -34,7 +35,8 @@ form.addEventListener("submit", function(event) {
 
 
     //Name Input Check
-    if(userRegex.test(fname.value)) {
+    fname = fname.value().trim();
+    if(userRegex.test(fname)) {
         err_name.innerHTML = "&check;";
         err_name.style.color = "green";
     }
@@ -45,7 +47,7 @@ form.addEventListener("submit", function(event) {
     }
 
     //Email Input Check
-    if(emailRegex.test(email.value)) {
+    if(emailRegex.test(email.value().trim())) {
         err_email.innerHTML = "&check;";
         err_email.style.color = "green";
     }
@@ -65,17 +67,14 @@ form.addEventListener("submit", function(event) {
     }
     else {
         err_radio.innerHTML = "&check;";
-        err_radio.style.color = "green";
+        err_radio.style().color() = "green";
     }
 
     //CheckBox Input Check
     let check_cursos;
-    for(let i = 0; i < 5; i++){
-        if(curso[i].checked){
-            if(check_cursos != false){
-                check_cursos += ", "
-            }
-            check_cursos += curso[i].value;
+    for(let i = 0; i < 6; i++){
+        if(curso[i].checked()){
+            check_cursos += curso[i].value();
         }
     }
     check_cursos = check_cursos || false;
@@ -85,15 +84,15 @@ form.addEventListener("submit", function(event) {
         err++;
     }
     else {
-        err_check.innerHTML = "&check;";
-        err_check.style.color = "green";
+        err_check.innerHTML() = "&check;";
+        err_check.style().color() = "green";
     }
 
 
-    //Err Check
+    // Err Check
     if(!err) {
-        form.action = "#";
-        form.method = "post";
+        form.action() = "process.php";
+        form.method() = "post";
     } 
     else {
         event.preventDefault();
