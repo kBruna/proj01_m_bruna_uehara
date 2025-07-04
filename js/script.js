@@ -7,6 +7,8 @@ let err_name = document.getElementById("req_nome");
 let err_email = document.getElementById("req_email");
 let err_check = document.getElementById("req_check");
 let err_radio = document.getElementById("req_radio");
+let type_form = document.getElementById("forms").className;
+let id_update = document.getElementById("id");
 
 let err;
 
@@ -30,12 +32,15 @@ function radioValid(botoes) {
 //Submit Form
 form.addEventListener("submit", function(event) {
     //Error Clear
+    event.preventDefault();
     err = 0;
     err_name.innerHTML = err_email.innerHTML = err_check.innerHTML = err_radio.innerHTML = "";
+    let msg_edit = "Faltam informações para o envio do formulário ou os campos foram preenchidos incorretamente.\nVerifique os campos:\n\n";
 
-
+    let msg_alt = "Deseja enviar as modificações?\n\n";
+    
     //Name Input Check
-    fname = fname.value().trim();
+    fname = fname.value.trim();
     if(userRegex.test(fname)) {
         err_name.innerHTML = "&check;";
         err_name.style.color = "green";
@@ -44,10 +49,13 @@ form.addEventListener("submit", function(event) {
         err_name.innerText = "*Valor Inválido";
         err_name.style.color = "red";
         err++;
+        msg_edit += "\t \u2022 Nome\n";
+        msg_alt += "\t \u2022 Nome\n";
     }
 
     //Email Input Check
-    if(emailRegex.test(email.value().trim())) {
+    email = email.value.trim();
+    if(emailRegex.test(email)) {
         err_email.innerHTML = "&check;";
         err_email.style.color = "green";
     }
@@ -55,6 +63,8 @@ form.addEventListener("submit", function(event) {
         err_email.innerText = "*Valor Inválido";
         err_email.style.color = "red";
         err++;
+        msg_edit += "\t \u2022 Email\n";
+        msg_alt += "\t \u2022 Email\n";
     }
 
     //Radio Input Check
@@ -64,17 +74,19 @@ form.addEventListener("submit", function(event) {
     if(!check_radio) {
         err_radio.innerHTML = "*Selecione uma Opção";
         err++;
+        msg_edit += "\t \u2022 Como ficou sabendo da gente?\n";
+        msg_alt += "\t \u2022 Como ficou sabendo da gente?\n";
     }
     else {
         err_radio.innerHTML = "&check;";
-        err_radio.style().color() = "green";
+        err_radio.style.color = "green";
     }
 
     //CheckBox Input Check
     let check_cursos;
     for(let i = 0; i < 6; i++){
-        if(curso[i].checked()){
-            check_cursos += curso[i].value();
+        if(curso[i].checked){
+            check_cursos += curso[i].value;
         }
     }
     check_cursos = check_cursos || false;
@@ -82,19 +94,38 @@ form.addEventListener("submit", function(event) {
     if(!check_cursos) {
         err_check.innerHTML = "*Selecione uma Opção";
         err++;
+        msg_edit += "\t \u2022 Cursos\n";
+        msg_alt += "\t \u2022 Cursos\n";
     }
     else {
-        err_check.innerHTML() = "&check;";
-        err_check.style().color() = "green";
+        err_check.innerHTML = "&check;";
+        err_check.style.color = "green";
     }
 
 
     // Err Check
-    if(!err) {
-        form.action() = "process.php";
-        form.method() = "post";
+    if(err == 0) {
+        if (type_form == "contat") {
+            form.action = "process.php";
+            form.method = "POST";
+            form.submit();
+            console.log("Foi adicionado!");
+        }
+        else if (type_form == "edit"){
+            if(confirm(msg_alt)) {
+                form.action = "alter.php";
+                form.method = "POST";
+                form.submit();
+                console.log("Foi alterado!");
+            }
+            else {
+                alert("Operação cancelada!");
+            }
+        }
     } 
     else {
         event.preventDefault();
+        console.log("Não foi!");
+        alert(msg_edit);
     }
 })

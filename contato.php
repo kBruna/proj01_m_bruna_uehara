@@ -5,11 +5,11 @@
 ?>
         <main>
             <section>
-                <article id="forms">
+                <article id="forms" class="contat">
                     <img src="./img/473533605_18390862147100097_591300106323218751_n.jpg" />
                     <div id="forms2">
                         <h2>Contato</h2>
-                        <form id="contato" name="contato" method="post" action="process.php">
+                        <form id="contato" name="contato">
                             <div id="f_fill">
                                 <p><label for="f_name">Nome:</label>
                                     <input type="text" id="f_name" name="f_name" placeholder="Seu Nome" minlength="3" required>
@@ -81,6 +81,7 @@
                 </article>
             </section>
         </main>
+        <script src="./js/script.js"></script>
 <?php
     @include('footer.php');
 ?>

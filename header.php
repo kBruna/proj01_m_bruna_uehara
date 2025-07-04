@@ -8,7 +8,6 @@
         <title>Guará Estúdio</title>
         <link rel="stylesheet" href="./css/estilos.css" />
         <link rel="stylesheet" href="<?php echo $css_file; ?>" />
-        <script src="./js/script.js" defer></script>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Hepta+Slab:wght@1..900&display=swap" rel="stylesheet">

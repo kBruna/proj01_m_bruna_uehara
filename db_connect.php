@@ -12,14 +12,13 @@
 
         $conx->exec($create_db);
 
-        $_SESSION['msg'] = "Banco criado com sucesso..."; //DELETAR DEPOIS
+        // $_SESSION['msg'] = "Banco criado com sucesso..."; //DELETAR DEPOIS
 
     }
     catch(PDOException $e) {
-        echo 
-            $db."Falha na criação do Banco:<br>".$e->getMessage();
+        echo $db."Falha na criação do Banco:<br>".$e->getMessage();
 
-            $_SESSION['msg'] = "O Banco já existe!"; //DELETAR DEPOIS
+        // $_SESSION['msg'] = "O Banco já existe!"; //DELETAR DEPOIS
     }
 
     //Try Connection Again
@@ -28,7 +27,7 @@
         $conx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
     catch(PDOException $e) {
-        echo $db."Falha na conexão...".$e->getMessage();
+        // echo $db."Falha na conexão...".$e->getMessage();
     }
 
     //Conexão OK
@@ -36,18 +35,19 @@
         try {
             $create_db = "CREATE TABLE $db.$tb(
                 `id`    INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+                `data`  DATE DEFAULT CURRENT_TIMESTAMP,
+                `hora`  TIME DEFAULT CURRENT_TIMESTAMP,
                 `nome`  VARCHAR(60) NOT NULL,
                 `email` VARCHAR(60) NOT NULL,
                 `curso` VARCHAR(100) NOT NULL,
-                `rede`  VARCHAR(30) NOT NULL,
-                `data`  TIMESTAMP DEFAULT CURRENT_TIMESTAMP);
+                `rede`  VARCHAR(30) NOT NULL);
                 ENGINE=InnoDB DEFAULT CHARSET=latin1";
             
             $conx->exec($create_db);
-            $_SESSION['msg']="Banco e tabela criados!";   //DELETAR DEPOIS
+            // $_SESSION['msg']="Banco e tabela criados!";   //DELETAR DEPOIS
         }
         catch(PDOException $e) {
-            $_SESSION['msg']="Falha na tabela:<br>".$e->getMessage();
+            // $_SESSION['msg']="Falha na tabela:<br>".$e->getMessage();
         }
     }
 ?>

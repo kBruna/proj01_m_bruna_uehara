@@ -18,7 +18,7 @@
 
     //Variable Cleaning
     $nome = strtoupper(trim(strip_tags($_POST['f_name'] ?? '')));
-    $email = trim(filter_var($_POST['f_email'] ?? '', FILTER_SANITIZE_EMAIL));
+    $email = strtolower(trim(filter_var($_POST['f_email'] ?? '', FILTER_SANITIZE_EMAIL)));
     $cursos_array = $_POST['tipo_curso'] ?? [];
     $cursos_array = is_array($cursos_array) ? $cursos_array : [$cursos_array];
     $cursos = implode(", ", array_map('strip_tags', $cursos_array));
